@@ -1,7 +1,7 @@
 'use strict';
 
 /* Generic Controllers */
-angular.module('myApp.controllers', [])
+angular.module('myApp.IndexController', [])
 .controller('IndexController', function ($scope, $http) {
     // Index controller
     $http({

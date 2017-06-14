@@ -7,11 +7,8 @@ var express         = require('express'),
   methodOverride    = require('method-override'),
   errorHandler      = require('express-error-handler'),
   morgan            = require('morgan'),
-  routes            = require('./routes'),
-  api               = require('./routes/api'),
   http              = require('http'),
   path              = require('path'),
-  mongo             = require('mongodb'),
   fs                = require('fs');
 
 var app = module.exports = express();
@@ -20,9 +17,7 @@ var app = module.exports = express();
 var apiConfig = JSON.parse(fs.readFileSync('./ApiConfig.json', 'utf8'));
 
 // Mongo DB setup
-var mongo           = require('mongodb');
-var monk            = require('monk');
-var db              = monk(apiConfig.database_url);
+var MongoClient = require('mongodb').MongoClient;
 
 /**
  * Configuration
@@ -33,7 +28,10 @@ app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.use(morgan('dev'));
-app.use(bodyParser());
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+app.use(bodyParser.json());
 app.use(methodOverride());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -53,16 +51,21 @@ if (env === 'production') {
 /**
  * Routes
  */
-var apiRoutes     = require('./routes/api');
+var routes = require('./routes');
 
 // Database route connection
 app.use(function(req, res, next) {
-    req.db = db;
-    next();
+    MongoClient.connect(apiConfig.database_url, function (err, db) {
+        if(err) throw err;
+
+        req.db = db;
+        next();
+    });
 });
 
 // API routes
-app.use('/api', apiRoutes);
+app.use('/api/post', require('./routes/BlogPostApi'));
+// more api routes here ...
 
 // Serve index and partials
 app.get('/', routes.index);

@@ -4,11 +4,11 @@
 
 angular.module("myApp", [
     "ngRoute",
-    "myApp.controllers",
+    "myApp.IndexController",
     "myApp.filters",
     "myApp.services",
     "myApp.directives",
-    "myApp.blogpostcontrollers"
+    "myApp.BlogPostController"
 ]).
 config(function ($interpolateProvider, $routeProvider, $locationProvider) {
 

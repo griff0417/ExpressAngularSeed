@@ -2,7 +2,7 @@
 
 /* Controllers */
 
-angular.module("myApp.blogpostcontrollers", [])
+angular.module("myApp.BlogPostController", [])
 .controller("AddPostController", function ($scope, $http, $location) {
     // Add post controller
     $scope.form = {};
@@ -20,7 +20,7 @@ angular.module("myApp.blogpostcontrollers", [])
     // Read post controller
     $http.get("/api/post/" + $routeParams.id)
         .then(function(res) {
-            $scope.post = res.data[0];
+            $scope.post = res.data;
         }, function(res) {
             console.log(res);
         });
@@ -28,10 +28,12 @@ angular.module("myApp.blogpostcontrollers", [])
 .controller("EditPostController", function ($scope, $http, $routeParams, $location) {
     // Edit post controller
     $scope.form = {};
+    $scope.disableEdit = true;
 
     $http.get("/api/post/" + $routeParams.id)
         .then(function(res) {
-            $scope.form = res.data[0];
+            $scope.form = res.data;
+            $scope.disableEdit = false;
         }, function(res) {
             console.log(res);
         });
@@ -49,7 +51,7 @@ angular.module("myApp.blogpostcontrollers", [])
     // Delete post controller
     $http.get("/api/post/" + $routeParams.id)
         .then(function(res) {
-            $scope.post = res.data[0];
+            $scope.post = res.data;
         }, function(res) {
             console.log(res);
         });
