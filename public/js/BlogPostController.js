@@ -1,6 +1,6 @@
 'use strict';
 
-/* Controllers */
+/* Blog Post Controllers */
 
 angular.module("myApp.BlogPostController", [])
 .controller("AddPostController", function ($scope, $http, $location) {

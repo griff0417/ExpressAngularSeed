@@ -1,9 +1,8 @@
 'use strict';
 
-/* Generic Controllers */
+/* Index Controller */
 angular.module('myApp.IndexController', [])
 .controller('IndexController', function ($scope, $http) {
-    // Index controller
     $http({
         method: 'GET',
         url: '/api/post'
