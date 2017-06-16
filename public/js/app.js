@@ -4,42 +4,48 @@
 
 angular.module("myApp", [
     "ngRoute",
-    "myApp.IndexController",
     "myApp.filters",
     "myApp.services",
     "myApp.directives",
+    "myApp.IndexController",
     "myApp.BlogPostController"
 ]).
 config(function ($interpolateProvider, $routeProvider, $locationProvider) {
 
-    // Change interpolation tags
-    // $interpolateProvider.startSymbol('[{[');
-    // $interpolateProvider.endSymbol(']}]');
-
-    // setup angular routes
+    // Index Route
     $routeProvider.
     when("/", {
-        templateUrl: "partials/index",
+        templateUrl: "view/home",
+        controller: "IndexController"
+    });
+
+    // Blog Routes
+    $routeProvider.
+    when("/blog", {
+        templateUrl: "view/blog/blog",
         controller: "IndexController"
     }).
-    when("/addPost/", {
-        templateUrl: "/partials/addPost",
+    when("/addPost", {
+        templateUrl: "view/blog/addPost",
         controller: "AddPostController"
     }).
     when("/readPost/:id/", {
-        templateUrl: "/partials/readPost",
+        templateUrl: "/view/blog/readPost",
         controller: "ReadPostController"
     }).
     when("/editPost/:id/", {
-        templateUrl: "/partials/editPost",
+        templateUrl: "/view/blog/editPost",
         controller: "EditPostController"
     }).
     when("/deletePost/:id/", {
-        templateUrl: "/partials/deletePost",
+        templateUrl: "/view/blog/deletePost",
         controller: "DeletePostController"
-    }).
+    });
+
+    // Otherwise Route (if no others match)
+    $routeProvider.
     otherwise({
-      redirectTo: "/"
+        redirectTo: "/"
     });
 
     $locationProvider.html5Mode({

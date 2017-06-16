@@ -10,7 +10,7 @@ angular.module("myApp.BlogPostController", [])
     $scope.submitPost = function() {
         $http.post("/api/post", $scope.form)
             .then(function(res) {
-                $location.path("/");
+                $location.path("/blog");
             }, function(res) {
                 console.log(res);
             });
@@ -59,7 +59,7 @@ angular.module("myApp.BlogPostController", [])
     $scope.deletePost = function() {
         $http.delete("/api/post/" + $routeParams.id)
             .then(function(res) {
-                $location.url("/");
+                $location.url("/blog");
             }, function(res) {
                 console.log(res);
             });

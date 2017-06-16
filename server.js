@@ -51,7 +51,7 @@ if (env === 'production') {
 /**
  * Routes
  */
-var routes = require('./routes');
+var indexRoutes = require('./routes/index-routes');
 
 // Database route connection
 app.use(function(req, res, next) {
@@ -67,10 +67,11 @@ app.use(function(req, res, next) {
 app.use('/api/post', require('./routes/BlogPostApi'));
 // more api routes here ...
 
-// Serve index and partials
-app.get('/', routes.index);
-app.get('/partials/:name', routes.partials);
-app.get('*', routes.index);
+// Serve index and other views
+app.get('/', indexRoutes.index);
+app.get('/view/:name', indexRoutes.view);
+app.get('/view/:dir/:name', indexRoutes.subView);
+app.get('*', indexRoutes.index);
 
 
 /**
