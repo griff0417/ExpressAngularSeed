@@ -1,6 +1,3 @@
-/*
- * API to mongo connection
- */
 var express = require("express");
 var router = express.Router();
 var ObjectId = require('mongodb').ObjectID;

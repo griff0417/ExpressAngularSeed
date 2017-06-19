@@ -1,1 +1,7 @@
 <h3>Welcome home!</h3>
+
+<p app-version></p>
+
+<p ng-init="text='This is using a filter that will replace all occurances of the string \'% VERSION %\' (without spaces next to the %) and replace them with the version number. Like this: %VERSION%'">
+    {{ text | interpolateVersion }}
+</p>
