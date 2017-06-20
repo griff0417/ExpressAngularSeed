@@ -23,7 +23,7 @@ config(function ($interpolateProvider, $routeProvider, $locationProvider) {
     $routeProvider.
     when("/blog", {
         templateUrl: "view/blog/blog",
-        controller: "IndexController"
+        controller: "BlogListController"
     }).
     when("/addPost", {
         templateUrl: "view/blog/addPost",

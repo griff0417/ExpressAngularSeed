@@ -3,6 +3,21 @@
 /* Blog Post Controllers */
 
 angular.module("myApp.BlogPostController", [])
+.controller('BlogListController', function ($scope, $http) {
+    // Blog list controller
+    $scope.posts = [];
+
+    $http({
+        method: 'GET',
+        url: '/api/post'
+    }).
+    then(function (res) {
+        $scope.posts = res.data;
+    },
+    function(res) {
+        console.log(res);
+    });
+})
 .controller("AddPostController", function ($scope, $http, $location) {
     // Add post controller
     $scope.form = {};
