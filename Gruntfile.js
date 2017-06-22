@@ -15,7 +15,7 @@ module.exports = function(grunt) {
 
         express: {
             options: {
-
+                background: true
             },
             web: {
                 options: {
@@ -86,7 +86,7 @@ module.exports = function(grunt) {
 
             // Compile less when it changes
             less: {
-                files: ['src/**/*.less'],
+                files: ['public/**/*.less'],
                 tasks: ['less:dev']
             },
 
@@ -109,7 +109,6 @@ module.exports = function(grunt) {
                 },
                 files: [
                     'public/css/*.css',
-                    //'public/js/**/*.js',
                     'views/**/*.ejs'
                 ]
             },
