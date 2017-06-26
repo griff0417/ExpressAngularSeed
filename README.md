@@ -18,7 +18,21 @@ Angular and all routing apart from '/' and '/api/' is managed client-side with
 Angular routing. This part of the application is where the app logic goes and where
 views, etc will be created.
 
-This seed application is fully setup with the backend service, API, and client-side
+This seed project includes the following:
+- Express (to serve the application as an http server)
+- AngularJS (Angular 1) with pre-built blog site as an example
+- JQuery
+- Bootstrap
+- MomentJS
+- Grunt
+   - jshint
+   - uglify
+   - less
+   - cssmin
+   - watch (to compile less and livereload frontend files)
+   - express-server (to run the express server with Grunt)
+
+This seed project is fully setup with the backend service, API, and client-side
 app and is built out as a basic blog site to provide an example of use.
 
 ### Setup Instructions
@@ -30,7 +44,13 @@ app and is built out as a basic blog site to provide an example of use.
    2. Set the 'database_url' field to the URL of your hosted MongoDB database.
    3. Note: If you wish to use a different database, you will have to build that
       into the application yourself.
-4. There are two ways to start the application:
-   1. Nodemon is installed, so if you want the server to restart after you save a change, run `npm run dev`.
-   2. To start the application normally, run `node app.js`.
+4. There are three ways to start the application:
+   1. The suggested way: Run `grunt serve`. This will start the web server and several
+      grunt watch tasks to automatically compile less and livereload front-end files.
+         - Running `grunt serve-b` will start the same as `grunt serve`, but will
+           also open up your default browser to the application.
+   2. If you don't want all the features of grunt but still want a bit more than
+      a basic express server, run `npm run dev`. This will start nodemon. Nodemon
+      will start the web server and restart it whenever a file change is detected.
+   3. Lastly, to simply start the web server, run `npm start` or `node server.js`.
 5. To view the application, visit [http://localhost:3000](http://localhost:3000) in a browser.
