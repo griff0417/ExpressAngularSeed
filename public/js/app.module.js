@@ -4,9 +4,14 @@
 
 angular.module("myApp", [
     "ngRoute",
+
     "myApp.filter",
+
     "myApp.service",
+    "myApp.BlogPostService",
+
     "myApp.directive",
+
     "myApp.IndexController",
     "myApp.BlogPostController"
 ]).
@@ -26,19 +31,19 @@ config(function ($interpolateProvider, $routeProvider, $locationProvider) {
         controller: "BlogListController"
     }).
     when("/addPost", {
-        templateUrl: "view/blog/addPost",
+        templateUrl: "view/blog/add_post",
         controller: "AddPostController"
     }).
     when("/readPost/:id/", {
-        templateUrl: "/view/blog/readPost",
+        templateUrl: "/view/blog/read_post",
         controller: "ReadPostController"
     }).
     when("/editPost/:id/", {
-        templateUrl: "/view/blog/editPost",
+        templateUrl: "/view/blog/edit_post",
         controller: "EditPostController"
     }).
     when("/deletePost/:id/", {
-        templateUrl: "/view/blog/deletePost",
+        templateUrl: "/view/blog/delete_post",
         controller: "DeletePostController"
     });
 

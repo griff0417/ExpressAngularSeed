@@ -42,9 +42,7 @@ module.exports = function(grunt) {
             },
             production: {
                 files: {
-                    'dist/js/scripts.min.js': 'public/js/scripts.js',
-                    'dist/js/app.min.js': 'public/js/app.js',
-                    'dist/js/controllers/IndexController.min.js': 'public/js/controllers/IndexController.js'
+                    'dist/js/scripts.min.js': 'public/js/scripts.js'
                     // Combine files with: 'dist/js/filename_combination.min.js': ['src/js/filename1.js', 'src/js/filename2.js']
                 }
             }
@@ -87,7 +85,10 @@ module.exports = function(grunt) {
             // Compile less when it changes
             less: {
                 files: ['public/**/*.less'],
-                tasks: ['less:dev']
+                tasks: ['less:dev'],
+                options: {
+                    livereload: true
+                }
             },
 
             // Minify css when it changes
