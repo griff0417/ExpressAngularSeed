@@ -8,12 +8,11 @@ angular.module("myApp", [
     "myApp.filter",
 
     "myApp.service",
-    "myApp.BlogPostService",
+    "myApp.CRUDService",
 
     "myApp.directive",
 
-    "myApp.IndexController",
-    "myApp.BlogPostController"
+    "myApp.IndexController"
 ]).
 config(function ($interpolateProvider, $routeProvider, $locationProvider) {
 
@@ -22,29 +21,6 @@ config(function ($interpolateProvider, $routeProvider, $locationProvider) {
     when("/", {
         templateUrl: "view/home",
         controller: "IndexController"
-    });
-
-    // Blog Routes
-    $routeProvider.
-    when("/blog", {
-        templateUrl: "view/blog/blog",
-        controller: "BlogListController"
-    }).
-    when("/addPost", {
-        templateUrl: "view/blog/add_post",
-        controller: "AddPostController"
-    }).
-    when("/readPost/:id/", {
-        templateUrl: "/view/blog/read_post",
-        controller: "ReadPostController"
-    }).
-    when("/editPost/:id/", {
-        templateUrl: "/view/blog/edit_post",
-        controller: "EditPostController"
-    }).
-    when("/deletePost/:id/", {
-        templateUrl: "/view/blog/delete_post",
-        controller: "DeletePostController"
     });
 
     // Otherwise Route (if no others match)

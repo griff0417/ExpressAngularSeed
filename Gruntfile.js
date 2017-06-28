@@ -31,8 +31,8 @@ module.exports = function(grunt) {
             },
 
             // When this task is run, lint the Gruntfile and all js files in public
-            dev: ['Gruntfile.js', 'public/**/*.js'],
-            production: ['Gruntfile.js', 'public/**/*.js']
+            dev: ['Gruntfile.js', 'public/js/*.js'],
+            production: ['Gruntfile.js', 'public/js/*.js']
         },
 
         // Configure uglify to minify js files
@@ -87,7 +87,7 @@ module.exports = function(grunt) {
                 files: ['public/**/*.less'],
                 tasks: ['less:dev'],
                 options: {
-                    livereload: true
+                    // livereload: true
                 }
             },
 
@@ -106,7 +106,7 @@ module.exports = function(grunt) {
             // For livereloading any frontend files (templates, css, etc)
             frontend: {
                 options: {
-                    livereload: true
+                    // livereload: true
                 },
                 files: [
                     'public/css/*.css',
@@ -168,7 +168,7 @@ module.exports = function(grunt) {
     grunt.registerTask('dev', ['jshint:dev', 'cssmin:dev', 'less:dev']);
 
     // Only run production configuration
-    grunt.registerTask('production', ['jshint:production', 'uglify:production', 'cssmin:production', 'less:production'])
+    grunt.registerTask('production', ['jshint:production', 'uglify:production', 'cssmin:production', 'less:production']);
 
     // =========================================================================
     // LOAD GRUNT PLUGINS ======================================================

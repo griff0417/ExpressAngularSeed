@@ -64,7 +64,7 @@ app.use(function(req, res, next) {
 });
 
 // API routes
-app.use('/api/post', require('./routes/BlogPostApi'));
+app.use('/api/generic', require('./routes/restapi-routes'));
 // more api routes here ...
 
 // Serve index and other views

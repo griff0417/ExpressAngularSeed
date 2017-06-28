@@ -1,21 +1,6 @@
-<div class="content-wrapper">
-    <div class="row">
-        <div class="col-md-6">
-            <h3>Welcome home!</h3>
+<h3>{{ message }}</h3>
 
-            <p app-version></p>
+<p app-version>App Version: </p>
 
-            <p ng-init="text='This is using a filter that will replace all occurances of the string \'% VERSION %\' (without spaces next to the %) and replace them with the version number. Like this: %VERSION%'">
-                {{ text | interpolateVersion }}
-            </p>
-        </div>
-        <div class="col-md-6">
-            <p>If I'm towards the right of the screen, Bootstrap is working!</p>
-            <div id="jquery-test"></div>
-            <div>
-                <p>If the time is showing below, moment is working!</p>
-                <p>{{ time }}</p>
-            </div>
-        </div>
-    </div>
-</div>
+<h3>Generic CRUD Service Request:</h3>
+<p ng-repeat="item in list">{{ item.title }}</p>
