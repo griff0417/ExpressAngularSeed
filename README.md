@@ -33,7 +33,10 @@ This seed project includes the following:
    - express-server (to run the express server with Grunt)
 
 This seed project is fully setup with the backend service, API, and client-side
-app and is built out as a basic blog site to provide an example of use.
+Angular app and is built out as a basic blog site to provide an example of use.
+For the seed with the blog example, use the master branch of this repository.
+If you wish to start without the blog example, use the NoExample branch of
+this repository.
 
 ### Setup Instructions
 1. Make sure NodeJS is installed.
