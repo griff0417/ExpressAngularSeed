@@ -1,13 +1,12 @@
 {
-  "name": "ExpressAngularSeed",
+  "name": "MySpinClass",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
     "body-parser": "^1.0.2",
     "ejs": "^1.0.0",
     "error-handler": "^0.1.4",
-    "express": "~4.1.1",
-    "express-ejs-extend": "0.0.1",
+    "express": "^4.15.3",
     "express-error-handler": "^1.1.0",
     "method-override": "^1.0.0",
     "mongodb": "^2.2.28",

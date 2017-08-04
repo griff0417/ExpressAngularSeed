@@ -19,7 +19,7 @@ config(function ($interpolateProvider, $routeProvider, $locationProvider) {
     // Index Route
     $routeProvider.
     when("/", {
-        templateUrl: "view/home",
+        templateUrl: "/templates/home.html",
         controller: "IndexController"
     });
 
@@ -30,7 +30,6 @@ config(function ($interpolateProvider, $routeProvider, $locationProvider) {
     });
 
     $locationProvider.html5Mode({
-        enabled: true,
-        requireBase: false
+        enabled: true
     });
 });
