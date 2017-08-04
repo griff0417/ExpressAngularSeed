@@ -20,30 +20,30 @@ config(function ($interpolateProvider, $routeProvider, $locationProvider) {
     // Index Route
     $routeProvider.
     when("/", {
-        templateUrl: "view/home",
+        templateUrl: "/templates/home.html",
         controller: "IndexController"
     });
 
     // Blog Routes
     $routeProvider.
     when("/blog", {
-        templateUrl: "view/blog/blog",
+        templateUrl: "/templates/blog/blog.html",
         controller: "BlogListController"
     }).
     when("/addPost", {
-        templateUrl: "view/blog/add_post",
+        templateUrl: "/templates/blog/add_post.html",
         controller: "AddPostController"
     }).
     when("/readPost/:id/", {
-        templateUrl: "/view/blog/read_post",
+        templateUrl: "/templates/blog/read_post.html",
         controller: "ReadPostController"
     }).
     when("/editPost/:id/", {
-        templateUrl: "/view/blog/edit_post",
+        templateUrl: "/templates/blog/edit_post.html",
         controller: "EditPostController"
     }).
     when("/deletePost/:id/", {
-        templateUrl: "/view/blog/delete_post",
+        templateUrl: "/templates/blog/delete_post.html",
         controller: "DeletePostController"
     });
 
@@ -54,7 +54,6 @@ config(function ($interpolateProvider, $routeProvider, $locationProvider) {
     });
 
     $locationProvider.html5Mode({
-        enabled: true,
-        requireBase: false
+        enabled: true
     });
 });

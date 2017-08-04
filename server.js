@@ -23,10 +23,10 @@ var MongoClient = require('mongodb').MongoClient;
  * Configuration
  */
 // All environments
-app.engine('ejs', require('express-ejs-extend'));
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'ejs');
 app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
-app.set('view engine', 'ejs');
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({
   extended: true
@@ -51,7 +51,6 @@ if (env === 'production') {
 /**
  * Routes
  */
-var indexRoutes = require('./routes/index-routes');
 
 // Database route connection
 app.use(function(req, res, next) {
@@ -67,11 +66,17 @@ app.use(function(req, res, next) {
 app.use('/api/post', require('./routes/BlogPostApi'));
 // more api routes here ...
 
-// Serve index and other views
-app.get('/', indexRoutes.index);
-app.get('/view/:name', indexRoutes.view);
-app.get('/view/:dir/:name', indexRoutes.subView);
-app.get('*', indexRoutes.index);
+// Resource file routes
+app.use('/js', express.static(__dirname + '/js'));
+app.use('/css', express.static(__dirname + '/css'));
+app.use('/templates', express.static(__dirname + '/templates'));
+app.use('/lib', express.static(__dirname + '/lib'));
+
+// Cath all route to allow angular to take over routing
+app.all('/*', function(req, res, next) {
+    // Just send the index.html for other files to support HTML5Mode
+    res.sendFile('index.html', { root: __dirname });
+});
 
 
 /**
