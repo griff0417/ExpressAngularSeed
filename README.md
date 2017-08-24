@@ -41,7 +41,9 @@ this repository.
 ### Setup Instructions
 1. Make sure NodeJS is installed.
 2. Open up a CMD(or terminal) window in the directory of this application.
-3. Run `npm install`.
+3. Install the needed dependencies.
+   1. Run `npm install`.
+   2. In order to run the app in the suggested way, install grunt globally with `npm install -g grunt`
 4. Setup the ApiConfig for your database.
    1. Open up ApiConfig.json at the root of the application.
    2. Set the 'database_url' field to the URL of your hosted MongoDB database.
