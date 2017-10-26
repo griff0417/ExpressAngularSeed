@@ -14,7 +14,7 @@ var express         = require('express'),
 var app = module.exports = express();
 
 // API Config
-var apiConfig = JSON.parse(fs.readFileSync('./ApiConfig.json', 'utf8'));
+var dbConfig = JSON.parse(fs.readFileSync('./DBConfig.json', 'utf8'));
 
 // Mongo DB setup
 var MongoClient = require('mongodb').MongoClient;
@@ -54,8 +54,8 @@ if (env === 'production') {
 
 // Database route connection
 app.use(function(req, res, next) {
-    if (apiConfig && apiConfig.use_database == true) {
-        MongoClient.connect(apiConfig.database_url, function (err, db) {
+    if (dbConfig && dbConfig.use_database == true) {
+        MongoClient.connect(dbConfig.database_url, function (err, db) {
             if(err) throw err;
 
             req.useDb = true;
