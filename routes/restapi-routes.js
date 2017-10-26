@@ -7,6 +7,10 @@ var ObjectId = require('mongodb').ObjectID;
  */
 /* GET all */
 router.get("/:col", function(req, res) {
+    if (req.useDb == false) {
+        res.json({"success": false, "message": "No database connection was established"});
+    }
+
     var db = req.db;
 
     db.collection(req.params.col, function(err, collection) {
@@ -22,6 +26,10 @@ router.get("/:col", function(req, res) {
 
 /* GET one */
 router.get("/:col/:id", function(req, res) {
+    if (req.useDb == false) {
+        res.json({"success": false, "message": "No database connection was established"});
+    }
+
     var db = req.db;
     var postId = req.params.id;
 
@@ -39,6 +47,10 @@ router.get("/:col/:id", function(req, res) {
 
 /* POST a new post */
 router.post("/:col", function(req, res) {
+    if (req.useDb == false) {
+        res.json({"success": false, "message": "No database connection was established"});
+    }
+
     var db = req.db;
     var reqData = req.body;
 
@@ -53,6 +65,10 @@ router.post("/:col", function(req, res) {
 
 /* PUT/UPDATE a post */
 router.put("/:col/:id", function(req, res) {
+    if (req.useDb == false) {
+        res.json({"success": false, "message": "No database connection was established"});
+    }
+
     var db = req.db;
     var postId = req.params.id;
     var reqData = req.body;
@@ -73,6 +89,10 @@ router.put("/:col/:id", function(req, res) {
 
 /* DELETE a post */
 router.delete("/:col/:id", function(req, res) {
+    if (req.useDb == false) {
+        res.json({"success": false, "message": "No database connection was established"});
+    }
+    
     var db = req.db;
     var postId = req.params.id;
 

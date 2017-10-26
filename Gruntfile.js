@@ -117,7 +117,11 @@ module.exports = function(grunt) {
             // For loading the express server
             web: {
                 files: [
-                    'public/js/**/*.js'
+                    'public/js/**/*.js',
+                    'server.js',
+                    'passport.js',
+                    'routes/**/*.js',
+                    'models/**/*.js'
                 ],
                 tasks: [
                     'express:web'
@@ -139,10 +143,6 @@ module.exports = function(grunt) {
                     {
                         grunt: true,
                         args: ['watch:less']
-                    },
-                    {
-                        grunt: true,
-                        args: ['watch:scripts']
                     },
                     {
                         grunt: true,

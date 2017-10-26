@@ -54,12 +54,19 @@ if (env === 'production') {
 
 // Database route connection
 app.use(function(req, res, next) {
-    MongoClient.connect(apiConfig.database_url, function (err, db) {
-        if(err) throw err;
+    if (apiConfig && apiConfig.use_database == true) {
+        MongoClient.connect(apiConfig.database_url, function (err, db) {
+            if(err) throw err;
 
-        req.db = db;
+            req.useDb = true;
+            req.db = db;
+            next();
+        });
+    }
+    else {
+        req.useDb = false;
         next();
-    });
+    }
 });
 
 // API routes
