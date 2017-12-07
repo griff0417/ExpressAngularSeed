@@ -1,7 +1,7 @@
 'use strict';
 
 /* Index Controller */
-angular.module('myApp.IndexController', [])
+angular.module('app.IndexController', [])
 .controller('IndexController', function ($scope, CRUDService) {
     $scope.message = "Express Angular Seed";
 
@@ -9,4 +9,8 @@ angular.module('myApp.IndexController', [])
     CRUDService.READALL("post").then(function(data) {
         $scope.list = data;
     });
+
+    $scope.logout = function() {
+        window.location.replace("/logout");
+    };
 });

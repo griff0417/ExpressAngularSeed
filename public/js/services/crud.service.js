@@ -9,7 +9,7 @@
  * the name of a database collection and will be used
  * to look up tables in the API.
  */
-angular.module('myApp.CRUDService', [])
+angular.module('app.CRUDService', [])
 .service('CRUDService', function($http) {
     var apiUrl = "/api/generic/";
 

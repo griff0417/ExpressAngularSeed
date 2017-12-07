@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html ng-app="app">
+<html ng-app="auth">
     <head>
         <base href="/" />
-
         <meta charset='utf8'>
-        <title>Angular Express Seed App</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Express Angular Seed Login</title>
+
         <link rel='stylesheet' href='/lib/bootstrap/css/bootstrap-theme.min.css'>
         <link rel='stylesheet' href='/lib/bootstrap/css/bootstrap.min.css'>
         <link rel='stylesheet' href='/css/main.css'>
@@ -30,20 +32,13 @@
         <script src="/lib/angular/angular-route.js"></script>
 
         <!-- Angular app -->
-        <script src="/js/app.module.js"></script>
+        <script src="/js/auth.module.js"></script>
 
         <!-- Angular services -->
-        <script src="/js/services/example.service.js"></script>
-        <script src="/js/services/crud.service.js"></script>
-
-        <!-- Angular filters -->
-        <script src="/js/filters/example.filter.js"></script>
-
-        <!-- Angular directives -->
-        <script src="/js/directives/example.directive.js"></script>
+        <script src="/js/services/auth.service.js"></script>
 
         <!-- Angular controllers -->
-        <script src="/js/controllers/index.controller.js"></script>
+        <script src="/js/controllers/login.controller.js"></script>
 
         <!-- Custom scripts -->
         <script src="/js/scripts.js"></script>

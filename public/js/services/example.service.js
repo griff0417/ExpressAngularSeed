@@ -11,5 +11,5 @@
     'directive('<name_of_directive>', function(version) {'
 */
 
-angular.module('myApp.service', []).
+angular.module('app.service', []).
 value('version', '0.1');

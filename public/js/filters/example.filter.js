@@ -14,7 +14,7 @@
     '{{ <variable containing string> | interpolateVersion }}'
 */
 
-angular.module('myApp.filter', []).
+angular.module('app.filter', []).
 filter('interpolateVersion', function(version) {
     return function(text) {
         return String(text).replace(/\%VERSION\%/mg, version);

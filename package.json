@@ -1,16 +1,24 @@
 {
-  "name": "MySpinClass",
+  "name": "ExpressAngularSeed",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "bcrypt-nodejs": "latest",
     "body-parser": "^1.0.2",
+    "bson": "^1.0.4",
+    "connect-flash": "~0.1.1",
+    "cookie-parser": "~1.0.0",
     "ejs": "^1.0.0",
     "error-handler": "^0.1.4",
     "express": "^4.15.3",
     "express-error-handler": "^1.1.0",
+    "express-session": "~1.0.0",
     "method-override": "^1.0.0",
     "mongodb": "^2.2.28",
-    "morgan": "^1.0.0"
+    "mongoose": "~4.4",
+    "morgan": "~1.0.0",
+    "passport": "~0.1.17",
+    "passport-local": "~0.1.6"
   },
   "devDependencies": {
     "grunt": "^1.0.1",

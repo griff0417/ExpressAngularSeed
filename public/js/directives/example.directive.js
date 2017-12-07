@@ -13,7 +13,7 @@
     to an HTML tag that can hold text.
 */
 
-angular.module('myApp.directive', []).
+angular.module('app.directive', []).
 directive('appVersion', function(version) {
     return function(scope, elm, attrs) {
         elm.text(version);

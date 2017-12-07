@@ -2,23 +2,23 @@
 
 // Declare app level module which depends on filters, and services
 
-angular.module("myApp", [
+angular.module("app", [
     "ngRoute",
 
-    "myApp.filter",
+    "app.filter",
 
-    "myApp.service",
-    "myApp.CRUDService",
+    "app.service",
+    "app.CRUDService",
 
-    "myApp.directive",
+    "app.directive",
 
-    "myApp.IndexController"
+    "app.IndexController"
 ]).
 config(function ($interpolateProvider, $routeProvider, $locationProvider) {
 
     // Index Route
     $routeProvider.
-    when("/", {
+    when("/home", {
         templateUrl: "/templates/home.html",
         controller: "IndexController"
     });
