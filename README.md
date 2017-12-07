@@ -4,6 +4,10 @@
 This is a seed project built with Express and Angular 1. It contains two applications
 built to be hosted as one.
 
+NOTE: This version of the seed project does not contain authentication. No parts
+      of the app are gated and use of the database is turned off by default.
+      To use the database change the proper fields in DBConfig.json.
+
 The first part of the application is the Express backend and API. This handles
 serving content and handles providing the API service. All requests to the toot
 ('/') URL will route to use the other half of the application's Angular routing.
