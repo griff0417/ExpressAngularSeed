@@ -87,7 +87,7 @@ module.exports = function(grunt) {
                 files: ['public/**/*.less'],
                 tasks: ['less:dev'],
                 options: {
-                    livereload: true
+
                 }
             },
 
@@ -106,7 +106,7 @@ module.exports = function(grunt) {
             // For livereloading any frontend files (templates, css, etc)
             frontend: {
                 options: {
-                    livereload: true
+                    
                 },
                 files: [
                     'public/css/*.css',

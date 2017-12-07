@@ -23,8 +23,6 @@ var MongoClient = require('mongodb').MongoClient;
  * Configuration
  */
 // All environments
-app.engine('html', require('ejs').renderFile);
-app.set('view engine', 'ejs');
 app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
 app.use(morgan('dev'));
