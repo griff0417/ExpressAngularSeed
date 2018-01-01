@@ -1,4 +1,5 @@
 {
+    "use_auth": true,
     "use_database": true,
     "database_url": "mongodb://admin:password@ds153659.mlab.com:53659/express-api"
 }

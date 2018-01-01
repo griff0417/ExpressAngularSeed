@@ -105,6 +105,11 @@ app.use('/lib', express.static(__dirname + '/lib'));
     angular app.
 */
 app.get('/', function(req, res, next) {
+    if (dbConfig && dbConfig.use_auth == false) {
+        res.redirect('/home');
+        return;
+    }
+
     if (isLoggedIn(req, res, next)) {
         res.redirect('/home');
     }
@@ -118,6 +123,12 @@ app.get('/', function(req, res, next) {
     returns the main angular app. This is gated.
 */
 app.all('/*', function(req, res, next) {
+    if (dbConfig && dbConfig.use_auth == false) {
+        // Just send the index.html for other files to support HTML5Mode
+        res.sendFile('index.html', { root: __dirname });
+        return;
+    }
+
     if (isLoggedIn(req, res, next)) {
         // Just send the index.html for other files to support HTML5Mode
         res.sendFile('index.html', { root: __dirname });
