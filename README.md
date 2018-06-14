@@ -48,7 +48,7 @@ this repository.
    3. Note: If you wish to use a different database, you will have to build that
       into the application yourself.
 4. There are three ways to start the application:
-   1. The suggested way: Run `grunt serve`. This will start the web server and several
+   1. The suggested way: Run `grunt serve` (requires grunt be installed globally `npm install grunt -g`). This will start the web server and several
       grunt watch tasks to automatically compile less and livereload front-end files.
          - Running `grunt serve-b` will start the same as `grunt serve`, but will
            also open up your default browser to the application.
