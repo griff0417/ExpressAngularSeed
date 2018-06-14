@@ -8,7 +8,7 @@ The first part of the application is the Express backend and API. This handles
 serving content and handles providing the API service. All requests to the toot
 ('/') URL will route to use the other half of the application's Angular routing.
 Any request to '/api/<something else>' will route to the API REST service to handle
-HTTP requests. The API is built to work with MongoDB. The included ApiConfig.json
+HTTP requests. The API is built to work with MongoDB. The included DBConfig.json
 is where you can specify your MongoDB connection settings. If you wish to use a
 different DB service other than MongoDB, you will have to build that into the
 application yourself.
@@ -44,8 +44,8 @@ this repository.
 3. Install the needed dependencies.
    1. Run `npm install`.
    2. In order to run the app in the suggested way, install grunt globally with `npm install -g grunt`
-4. Setup the ApiConfig for your database.
-   1. Open up ApiConfig.json at the root of the application.
+4. Setup the DBConfig for your database.
+   1. Open up DBConfig.json at the root of the application.
    2. Set the 'database_url' field to the URL of your hosted MongoDB database.
    3. Note: If you wish to use a different database, you will have to build that
       into the application yourself.
